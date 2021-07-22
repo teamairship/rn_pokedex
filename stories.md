@@ -6,6 +6,8 @@
   - You will navigate to this screen by tapping a Pokemon in the Home ScrollView.
   - Display the Pokemon's image full width across the top of the screen with a height of 300.
   - Have the name below the image.
+  - Below the name add the `maxHP` of the Pokemon.
+    - This will need to be added to the existing query. Update types if/where necessary.
   - Display any special abilities below if present in the Pokemon.
     - Name
     - Type
