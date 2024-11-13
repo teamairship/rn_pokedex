@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import { PokemonListItem } from '../components/PokemonListItem';
 import { fetchPokemons } from '../services/pokemonService';
-
-type Props = {};
 
 export const HomeScreen: React.FC<Props> = () => {
   const [loading, setLoading] = useState(false);
@@ -22,18 +20,14 @@ export const HomeScreen: React.FC<Props> = () => {
     fetchPokemonData();
   }, []);
 
-  const renderItem = ({ item }: { item: PokemonData }) => {
-    return <PokemonListItem pokemonData={item} />;
-  };
-
   return (
     <View style={styles.container}>
       {!loading ? (
-        <FlatList
-          keyExtractor={item => item.id}
-          data={pokemonsData}
-          renderItem={renderItem}
-        />
+        <ScrollView>
+          {pokemonsData.map(item => (
+            <PokemonListItem key={item.id} pokemonData={item} />
+          ))}
+        </ScrollView>
       ) : (
         <View style={styles.loading}>
           <Text>Loading...</Text>
