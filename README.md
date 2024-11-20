@@ -1,4 +1,4 @@
-# Airship | React Native Pokédex
+# Unosquare | React Native Pokédex
 
 ## Getting Started
 Before the tech interview, be sure to go through and get the project setup and running on your machine. Reach out if you run into any issues!
